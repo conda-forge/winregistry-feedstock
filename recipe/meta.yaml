@@ -21,7 +21,6 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - __win
 
 test:
   imports:

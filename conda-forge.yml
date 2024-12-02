@@ -1,5 +1,3 @@
-noarch_platforms:
-- win_64
 github:
   branch_name: main
   tooling_branch_name: main
