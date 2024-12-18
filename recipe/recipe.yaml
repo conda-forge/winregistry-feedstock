@@ -1,0 +1,48 @@
+context:
+  name: winregistry
+  version: 2.0.1
+  python_min: 3.9
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/winregistry-${{ version }}.tar.gz
+  sha256: 02931655fb0421b65385990e8472b1f49a43c7c1ff96c2b2ad489e5627ee3363
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - poetry-core >=1.0.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - winregistry
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - pip check
+
+about:
+  summary: Library aimed at working with Windows registry
+  license: MIT
+  license_file: LICENSE
+  license_url: https://github.com/shpaker/winregistry/blob/main/LICENSE
+  homepage: https://github.com/shpaker/winregistry
+
+extra:
+  recipe-maintainers:
+    - sbtq
+    - cedrictq
