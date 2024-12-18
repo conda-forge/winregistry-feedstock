@@ -8,7 +8,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/winregistry-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: 02931655fb0421b65385990e8472b1f49a43c7c1ff96c2b2ad489e5627ee3363
 
 build:
