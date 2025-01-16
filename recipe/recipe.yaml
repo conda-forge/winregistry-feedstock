@@ -1,7 +1,7 @@
 context:
   name: winregistry
-  version: 2.0.1
-  python_min: 3.9
+  version: "2.1.0"
+  python_min: '3.9'
 
 package:
   name: ${{ name|lower }}
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 02931655fb0421b65385990e8472b1f49a43c7c1ff96c2b2ad489e5627ee3363
+  sha256: 370c2872f9cf9a512ed344039efae2a2943eb36355bc867336ff049e0f9d1db4
 
 build:
-  number: 3
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
