@@ -1,6 +1,6 @@
 context:
   name: winregistry
-  version: "2.1.0"
+  version: "2.1.1"
   python_min: '3.9'
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 370c2872f9cf9a512ed344039efae2a2943eb36355bc867336ff049e0f9d1db4
+  sha256: 8233c4261a9d937cd8f0670da0d1e61fd7b86712c39b1af08cb83e91316195a7
 
 build:
   number: 0
@@ -21,6 +21,7 @@ requirements:
     - python ${{ python_min }}.*
     - poetry-core >=1.0.0
     - pip
+    - hatchling
   run:
     - python >=${{ python_min }}
 
